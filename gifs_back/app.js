@@ -11,6 +11,7 @@ const users = require('./routes/users')
 const login = require('./routes/login')
 const gift = require('./routes/gift')
 const movie = require('./routes/movie')
+const share = require('./routes/share')
 const mysql_query = require('./routes/mysql_query')
 
 // error handler
@@ -42,6 +43,7 @@ app.use(users.routes(), users.allowedMethods())
 app.use(login.routes(), login.allowedMethods())
 app.use(gift.routes(), gift.allowedMethods())
 app.use(movie.routes(), movie.allowedMethods())
+app.use(share.routes(), share.allowedMethods())
 app.use(mysql_query.routes(), mysql_query.allowedMethods())
 
 // error-handling

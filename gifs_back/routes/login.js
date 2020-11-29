@@ -16,15 +16,14 @@ router.get('/', async (ctx, next) => {
 
 router.get('/version', async (ctx, next) => {
     let result = {}
-    result.version = "V0.0.1"
-    result.updateURL = "https://www.lanzou.com/"
-    result.message = "😊本app为非商业软件,永久完全免费,不接受资助和打赏,但希望您能分享给身边的朋友. \r\n😊本软件仅供交流学习之用,请勿应用于任何商业用途!\r\n😊如果您有更好的资源请联系我:\r\n😠如果您是中国大陆用户,请您立即离开\r\n😊如果您有更好的资源请联系我: http://wwww.baidu.com \r\n"
+    result.version = "V1.0.0"
+    result.updateURL = "https://github.com/oliverquinn2021/gifsc_back"
+    result.message = "😊本app为非商业软件,永久完全免费,但需要您到分享才能维持. \r\n😊如果您有更好的资源请联系我: oliverquinn2021@gmail.com \r\n🚢🚢GIF车神导航🚢🚢\r\n最新地址:http://gifcheshen.com\r\n💗💗海蜇王资源网💗💗\r\n最新地址:http://haizhewang.xyz"
     result.pic_ad = [
-        { url: "http://wwww.baidu.com", src: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605806271744&di=f812a7d4839cc61193b48f5c0686c945&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F00%2F46%2F73%2F66%2F57205d43d534d.jpg" },
-        { url: "http://wwww.baidu.com", src: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605806271744&di=f812a7d4839cc61193b48f5c0686c945&imgtype=0&src=http%3A%2F%2Fpic.90sjimg.com%2Fdesign%2F00%2F46%2F73%2F66%2F57205d43d534d.jpg" },
+        { url: "https://gifcheshen.com", src: "https://www.picnew.org/images/2020/11/28/or.png" },
+        { url: "http://haizhewang.xyz", src: "https://www.picnew.org/images/2020/11/29/7047783e5094d494.gif" },
     ]
     ctx.body = result
 })
-
 
 module.exports = router
