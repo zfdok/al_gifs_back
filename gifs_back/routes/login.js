@@ -16,7 +16,7 @@ router.get('/', async (ctx, next) => {
 
 router.get('/version', async (ctx, next) => {
     let result = {}
-    result.version = "V1.0.0"
+    result.version = "V1.0.1"
     result.updateURL = "https://github.com/oliverquinn2021/gifsc_back"
     result.message = "😊本app为非商业软件,永久完全免费,但需要您到分享才能维持. \r\n😊如果您有更好的资源请联系我: oliverquinn2021@gmail.com \r\n🚢🚢GIF车神导航🚢🚢\r\n最新地址:http://gifcheshen.com\r\n💗💗海蜇王资源网💗💗\r\n最新地址:http://haizhewang.xyz"
     result.pic_ad = [

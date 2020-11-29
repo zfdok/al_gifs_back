@@ -1,6 +1,6 @@
 const router = require("koa-router")();
 const { query } = require("../mysql/query"); //引入异步查询方法
-const { SHOW_ALL_DB, QUERY_DATAS, DATAS_COUNT, QUERY_DATA_BY_ID, UPDATE_DATA, QUERY_DATA_BY_ID_IN_RANGE } = require("../mysql/sql"); //部分引入sql库
+const { QUERY_DATAS, DATAS_COUNT, QUERY_DATA_BY_ID, UPDATE_DATA, QUERY_DATA_BY_ID_IN_RANGE, INSERT_DATAS } = require("../mysql/sql"); //部分引入sql库
 
 router.prefix('/sql')
 
@@ -55,4 +55,42 @@ router.get("/get_an_artical", async (ctx, next) => {
   ctx.body = result;
 });
 
+router.get("/set_an_artical", async (ctx, next) => {
+  let recive = ctx.query;
+  let atricaldatas = {
+    count: 5,
+    data: [
+      {
+        url: recive.i1_img,
+        desc: recive.i1_desc,
+        secret_code: recive.i1_code
+      },
+      {
+        url: recive.i2_img,
+        desc: recive.i2_desc,
+        secret_code: recive.i2_code
+      },
+      {
+        url: recive.i3_img,
+        desc: recive.i3_desc,
+        secret_code: recive.i3_code
+      },
+      {
+        url: recive.i4_img,
+        desc: recive.i4_desc,
+        secret_code: recive.i4_code
+      },
+      {
+        url: recive.i5_img,
+        desc: recive.i5_desc,
+        secret_code: recive.i5_code
+      }
+    ]
+  }
+  // console.log(JSON.stringify(atricaldatas));
+  let values = `0,now(),'${recive.name}','${JSON.stringify(atricaldatas)}',1,'${recive.i1_img}'`
+  console.log(values);
+  let query_res = await query(INSERT_DATAS("articals", values))
+  ctx.body = query_res
+})
 module.exports = router;
